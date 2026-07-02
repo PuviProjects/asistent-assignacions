@@ -19,7 +19,7 @@
       "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && cat package.json | grep -A15 scripts')",
       "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc -b 2>&1 | head -40 && echo \"---TESTS---\" && npm test 2>&1 | tail -25')",
       "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc -b 2>&1 | head -40 && echo \"EXIT:$?\"')",
-      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc -b 2>&1 | head -30 && echo \"DONE\"')"
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe bash -lc 'ls -la ~/.ssh 2>/dev/null; echo \"---\"; ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | head -3')"
     ]
   }
 }
