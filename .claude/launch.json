@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "planificador",
+      "runtimeExecutable": "wsl.exe",
+      "runtimeArgs": [
+        "-d",
+        "ubuntu",
+        "--",
+        "bash",
+        "-lc",
+        "source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && pnpm dev --host --port ${PORT:-5180}"
+      ],
+      "autoPort": true,
+      "port": 5180
+    }
+  ]
+}

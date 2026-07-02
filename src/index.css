@@ -1,0 +1,281 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* =========================================================================
+   PLANIFICADOR · DESIGN SYSTEM
+   Palette: Zinc (neutrals) + Emerald (primary)  ·  Type: Inter
+   Tokens are exposed both as raw scales (from Tailwind defaults) and as
+   semantic, theme-aware variables that flip between light and dark.
+   ========================================================================= */
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* Radius scale */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* Elevation — subtle, flat, modern */
+  --shadow-xs: 0 1px 2px rgba(9, 9, 11, 0.04);
+  --shadow-sm: 0 1px 3px rgba(9, 9, 11, 0.06), 0 1px 2px rgba(9, 9, 11, 0.04);
+  --shadow-md: 0 4px 12px rgba(9, 9, 11, 0.06), 0 2px 4px rgba(9, 9, 11, 0.04);
+  --shadow-lg: 0 12px 32px rgba(9, 9, 11, 0.1);
+}
+
+/* ---------- Semantic tokens (light = default) ---------- */
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /* Surfaces */
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --surface-2: #f4f4f5;
+    --surface-3: #e4e4e7;
+
+    /* Borders */
+    --border: #e4e4e7;
+    --border-strong: #d4d4d8;
+
+    /* Text */
+    --text: #18181b;
+    --text-muted: #71717a;
+    --text-subtle: #a1a1aa;
+    --text-inverse: #fafafa;
+
+    /* Primary — Emerald */
+    --primary: #059669;
+    --primary-hover: #047857;
+    --primary-fg: #ffffff;
+    --primary-soft: #ecfdf5;
+    --primary-soft-fg: #047857;
+    --ring: #10b981;
+
+    /* Semantic */
+    --success: #059669;
+    --success-soft: #ecfdf5;
+    --warning: #d97706;
+    --warning-soft: #fffbeb;
+    --danger: #e11d48;
+    --danger-soft: #fff1f2;
+    --info: #0284c7;
+    --info-soft: #f0f9ff;
+
+    /* Status pills (domain) — PR / AC / AO / PN */
+    --pr: #6d28d9;
+    --pr-soft: #f5f3ff;
+    --pr-border: #ddd6fe;
+    --ac: #0369a1;
+    --ac-soft: #f0f9ff;
+    --ac-border: #bae6fd;
+    --ao: #52525b;
+    --ao-soft: #f4f4f5;
+    --ao-border: #e4e4e7;
+    --pn: #b45309;
+    --pn-soft: #fffbeb;
+    --pn-border: #fde68a;
+
+    /* Sex markers */
+    --sex-h: #2563eb;
+    --sex-d: #db2777;
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    --bg: #09090b;
+    --surface: #18181b;
+    --surface-2: #27272a;
+    --surface-3: #3f3f46;
+
+    --border: #27272a;
+    --border-strong: #3f3f46;
+
+    --text: #fafafa;
+    --text-muted: #a1a1aa;
+    --text-subtle: #71717a;
+    --text-inverse: #18181b;
+
+    --primary: #10b981;
+    --primary-hover: #34d399;
+    --primary-fg: #022c22;
+    --primary-soft: #022c22;
+    --primary-soft-fg: #6ee7b7;
+    --ring: #10b981;
+
+    --success: #10b981;
+    --success-soft: #022c22;
+    --warning: #f59e0b;
+    --warning-soft: #2a1c00;
+    --danger: #fb7185;
+    --danger-soft: #2a0a12;
+    --info: #38bdf8;
+    --info-soft: #06243a;
+
+    --pr: #c4b5fd;
+    --pr-soft: #2e1065;
+    --pr-border: #5b21b6;
+    --ac: #7dd3fc;
+    --ac-soft: #082f49;
+    --ac-border: #075985;
+    --ao: #d4d4d8;
+    --ao-soft: #27272a;
+    --ao-border: #3f3f46;
+    --pn: #fcd34d;
+    --pn-soft: #2a1c00;
+    --pn-border: #92400e;
+
+    --sex-h: #60a5fa;
+    --sex-d: #f472b6;
+  }
+}
+
+/* ---------- Expose semantic tokens as Tailwind color utilities ---------- */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-fg: var(--primary-soft-fg);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --color-pr: var(--pr);
+  --color-pr-soft: var(--pr-soft);
+  --color-pr-border: var(--pr-border);
+  --color-ac: var(--ac);
+  --color-ac-soft: var(--ac-soft);
+  --color-ac-border: var(--ac-border);
+  --color-ao: var(--ao);
+  --color-ao-soft: var(--ao-soft);
+  --color-ao-border: var(--ao-border);
+  --color-pn: var(--pn);
+  --color-pn-soft: var(--pn-soft);
+  --color-pn-border: var(--pn-border);
+
+  --color-sex-h: var(--sex-h);
+  --color-sex-d: var(--sex-d);
+
+  /* ---- shadcn/ui token bridge → mapped to our design system ----
+     Lets shadcn components (bg-popover, text-muted-foreground, border, …)
+     inherit the Zinc + Emerald look without their own palette. */
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--text);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--text-muted);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--text);
+  --color-destructive: var(--danger);
+  --color-destructive-foreground: var(--primary-fg);
+  --color-input: var(--border-strong);
+}
+
+/* ---------- Base element styles ---------- */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.014em;
+    color: var(--text);
+  }
+
+  ::selection {
+    background: var(--primary-soft);
+    color: var(--primary-soft-fg);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-3);
+    border-radius: var(--radius-pill);
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-subtle);
+  }
+}
+
+/* ---------- Animations (dialog / overlay) ---------- */
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.animate-overlay-in {
+  animation: overlay-in 0.15s ease-out;
+}
+.animate-dialog-in {
+  animation: dialog-in 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}

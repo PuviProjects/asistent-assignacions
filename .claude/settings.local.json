@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__visualize__show_widget",
+      "Read(///wsl.localhost/ubuntu/home/puvi/projects/**)",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(wsl.exe -d ubuntu -- bash -lc 'echo \"NODE: $\\(node --version 2>/dev/null || echo missing\\)\"; echo \"PNPM: $\\(pnpm --version 2>/dev/null || echo missing\\)\"; echo \"NPM: $\\(npm --version 2>/dev/null || echo missing\\)\"; echo \"PWD-TEST:\"; ls -la /home/puvi/projects/expositor-panel')",
+      "Bash(wsl.exe -d ubuntu -- bash /home/puvi/diag.sh)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -d ubuntu -- bash /home/puvi/diag.sh)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -d ubuntu -- bash -lc 'cd /home/puvi/projects/expositor-panel/node_modules/sileo *)",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -d ubuntu -- bash -lc 'source /home/puvi/.profile_nvm && cat /home/puvi/projects/expositor-panel/node_modules/sileo/package.json | node -e \"let d=\\\\\"\\\\\";process.stdin.on\\(\\\\\"data\\\\\",c=>d+=c\\).on\\(\\\\\"end\\\\\",\\(\\)=>{console.log\\(JSON.stringify\\(JSON.parse\\(d\\).exports\\)\\)}\\)\"')",
+      "Bash(cat \"\\\\\\\\\\\\\\\\wsl.localhost\\\\\\\\ubuntu\\\\\\\\home\\\\\\\\puvi\\\\\\\\projects\\\\\\\\expositor-panel\\\\\\\\.claude\\\\\\\\launch.json\" 2>/dev/null || echo \"no launch.json\")",
+      "Bash(cd \"\\\\\\\\\\\\\\\\wsl.localhost\\\\\\\\ubuntu\\\\\\\\home\\\\\\\\puvi\\\\\\\\projects\\\\\\\\expositor-panel\")",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -d ubuntu -- bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc --noEmit -p tsconfig.json 2>&1 | head -40')",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -d ubuntu -- bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc --noEmit -p tsconfig.json 2>&1 | head -20')",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && cat package.json | grep -A15 scripts')",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc -b 2>&1 | head -40 && echo \"---TESTS---\" && npm test 2>&1 | tail -25')",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc -b 2>&1 | head -40 && echo \"EXIT:$?\"')",
+      "Bash(MSYS_NO_PATHCONV=1 wsl.exe -e bash -lc 'source /home/puvi/.profile_nvm && cd /home/puvi/projects/expositor-panel && npx tsc -b 2>&1 | head -30 && echo \"DONE\"')"
+    ]
+  }
+}
